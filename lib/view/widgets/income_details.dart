@@ -15,10 +15,14 @@ class IncomeDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) => ItemsDetails(itemsModel: items[index]),
-      itemCount: items.length,
-      shrinkWrap: true,
+    return Column(
+      children: items.map((e) => ItemsDetails(itemsModel: e)).toList(),
     );
+
+    // return ListView.builder(
+    //   itemBuilder: (context, index) => ItemsDetails(itemsModel: items[index]),
+    //   itemCount: items.length,
+    //   shrinkWrap: true,
+    // );
   }
 }

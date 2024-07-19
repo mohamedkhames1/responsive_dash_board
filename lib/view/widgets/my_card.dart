@@ -28,9 +28,13 @@ class MyCard extends StatelessWidget {
                 style: AppStyles.styleRegular16(context)
                     .copyWith(color: Colors.white),
               ),
-              subtitle: Text(
-                'Mohamed Khames',
-                style: AppStyles.styleMedium20(context),
+              subtitle: FittedBox(
+                alignment: Alignment.centerLeft,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  'Mohamed Khames',
+                  style: AppStyles.styleMedium20(context),
+                ),
               ),
               trailing: SvgPicture.asset(Assets.imagesGallery),
             ),
@@ -53,8 +57,10 @@ class MyCard extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 16,
+            const Flexible(
+              child: SizedBox(
+                height: 16,
+              ),
             )
           ],
         ),

@@ -34,6 +34,48 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensesItems(
+              model: items[0],
+              isActive: selectedIndex == 0,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItems(
+              model: items[1],
+              isActive: selectedIndex == 1,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItems(
+              model: items[2],
+              isActive: selectedIndex == 2,
+            ),
+          ),
+        ),
+      ],
+
       // children: items
       //     .map((e) => Expanded(
       //           child: AllExpensesItems(
@@ -41,36 +83,36 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
       //           ),
       //         ))
       //     .toList(),
-      children: items.asMap().entries.map((e) {
-        if (e.key == 1) {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(e.key);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensesItems(
-                  model: e.value,
-                  isActive: selectedIndex == e.key,
-                ),
-              ),
-            ),
-          );
-        } else {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(e.key);
-              },
-              child: AllExpensesItems(
-                model: e.value,
-                isActive: selectedIndex == e.key,
-              ),
-            ),
-          );
-        }
-      }).toList(),
+      // children: items.asMap().entries.map((e) {
+      //   if (e.key == 1) {
+      //     return Expanded(
+      //       child: GestureDetector(
+      //         onTap: () {
+      //           updateIndex(e.key);
+      //         },
+      //         child: Padding(
+      //           padding: const EdgeInsets.symmetric(horizontal: 12),
+      //           child: AllExpensesItems(
+      //             model: e.value,
+      //             isActive: selectedIndex == e.key,
+      //           ),
+      //         ),
+      //       ),
+      //     );
+      //   } else {
+      //     return Expanded(
+      //       child: GestureDetector(
+      //         onTap: () {
+      //           updateIndex(e.key);
+      //         },
+      //         child: AllExpensesItems(
+      //           model: e.value,
+      //           isActive: selectedIndex == e.key,
+      //         ),
+      //       ),
+      //     );
+      //   }
+      // }).toList(),
     );
   }
 
